@@ -1,0 +1,42 @@
+{
+    "sourceFile": "pages/blog/[id].vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1711545525620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711545550947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+<template>\r\n+    <div>\r\n+        We are inside a blog\r\n+    </div>\r\n+</template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711545761743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n <template>\r\n     <div>\r\n         We are inside a blog\r\n     </div>\r\n-</template>\n-<template>\r\n     <div>\r\n-        We are inside a blog\r\n+        post 로 id 값 {{route.params.id }}\r\n     </div>\r\n\\ No newline at end of file\n-</template>\n+</template>\r\n+<script setup>\r\n+    const route = useRoute();\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711545890167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     <div>\r\n         We are inside a blog\r\n     </div>\r\n     <div>\r\n-        post 로 id 값 {{route.params.id }}\r\n+        post 로 id 값 <b>{{route.params.id}}</b>\r\n     </div>\r\n </template>\r\n <script setup>\r\n     const route = useRoute();\r\n"
+                },
+                {
+                    "date": 1711545950772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+<template>\r\n+    <div>\r\n+        We are inside a blog\r\n+    </div>\r\n+    <div>\r\n+        post 로 id 값 <b>{{route.params.id}}</b>\r\n+    </div>\r\n+</template>\r\n+<!-- 내부의 코드는 컴포넌트의 인스턴스가 생성될 때마다 실행합니다. -->\r\n+<script setup> \r\n+    const route = useRoute();\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711545957197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+<template>\r\n+    <div>\r\n+        We are inside a blog\r\n+    </div>\r\n+    <div>\r\n+        post 로 id 값 <b>{{route.params.id}}</b>\r\n+    </div>\r\n+</template>\r\n+<!-- script setup >>> 내부의 코드는 컴포넌트의 인스턴스가 생성될 때마다 실행합니다. -->\r\n+<script setup> \r\n+    const route = useRoute();\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711545982352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,28 +8,6 @@\n </template>\r\n <!-- script setup >>> 내부의 코드는 컴포넌트의 인스턴스가 생성될 때마다 실행합니다. -->\r\n <script setup> \r\n     const route = useRoute();\r\n-</script>\n-<template>\r\n-    <div>\r\n-        We are inside a blog\r\n-    </div>\r\n-    <div>\r\n-        post 로 id 값 <b>{{route.params.id}}</b>\r\n-    </div>\r\n-</template>\r\n-<!-- 내부의 코드는 컴포넌트의 인스턴스가 생성될 때마다 실행합니다. -->\r\n-<script setup> \r\n-    const route = useRoute();\r\n-</script>\n-<template>\r\n-    <div>\r\n-        We are inside a blog\r\n-    </div>\r\n-    <div>\r\n-        post 로 id 값 <b>{{route.params.id}}</b>\r\n-    </div>\r\n-</template>\r\n-<script setup>\r\n-    const route = useRoute();\r\n+    console.log(route)\r\n </script>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1711545525620,
+            "name": "Commit-0",
+            "content": "<template>\r\n    <div>\r\n        We are inside a blog\r\n    </div>\r\n</template>"
+        }
+    ]
+}

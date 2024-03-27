@@ -1,0 +1,38 @@
+{
+    "sourceFile": "app.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1711545140081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711545231356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,15 @@\n <template>\n+  <nav>\n+    <ul>\n+      <li>\n+        <NuxtLink to=\"/\">Main</NuxtLink>\n+      </li>\n+      <li>\n+        <NuxtLink to=\"/about\">About</NuxtLink>\n+      </li>\n+    </ul>\n+  </nav>\n   <div>\n-    <!-- <NuxtWelcome /> -->\n     <NuxtPage />\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1711545310398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+<template>\n+  <nav>\n+    <ul>\n+      <li>\n+        <NuxtLink to=\"/\">Main</NuxtLink>\n+      </li>\n+      <li>\n+        <NuxtLink to=\"/about\">About</NuxtLink>\n+      </li>\n+    </ul>\n+  </nav>\n+  <div>\n+    <NuxtPage />\n+  </div>\n+</template>\n"
+                },
+                {
+                    "date": 1711545379471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,19 +12,4 @@\n   <div>\n     <NuxtPage />\n   </div>\n </template>\n-<template>\n-  <nav>\n-    <ul>\n-      <li>\n-        <NuxtLink to=\"/\">Main</NuxtLink>\n-      </li>\n-      <li>\n-        <NuxtLink to=\"/about\">About</NuxtLink>\n-      </li>\n-    </ul>\n-  </nav>\n-  <div>\n-    <NuxtPage />\n-  </div>\n-</template>\n"
+                },
+                {
+                    "date": 1711546378029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+<template>\n+  <NuxtLayout>\n+    <NuxtPage />\n+  </NuxtLayout>\n+</template>\n"
+                },
+                {
+                    "date": 1711546631018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,7 @@\n <template>\n-  <NuxtLayout>\n-    <NuxtPage />\n-  </NuxtLayout>\n-</template>\n-<template>\n-  <nav>\n-    <ul>\n-      <li>\n-        <NuxtLink to=\"/\">Main</NuxtLink>\n-      </li>\n-      <li>\n-        <NuxtLink to=\"/about\">About</NuxtLink>\n-      </li>\n-    </ul>\n-  </nav>\n   <div>\n-    <NuxtPage />\n+    <NuxtLayout>\n+      <NuxtPage />\n+    </NuxtLayout>\n   </div>\n </template>\n"
+                }
+            ],
+            "date": 1711545140081,
+            "name": "Commit-0",
+            "content": "<template>\n  <div>\n    <!-- <NuxtWelcome /> -->\n    <NuxtPage />\n  </div>\n</template>\n"
+        }
+    ]
+}

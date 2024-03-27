@@ -1,0 +1,26 @@
+{
+    "sourceFile": "pages/about.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1711545248467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711545285512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+<template>\r\n+\t<div>\r\n+\t\tThis page is about me.\r\n+\t</div>\r\n+</template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711546502045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n <template>\r\n \t<div>\r\n-\t\tThis page is about me.\r\n+\t\t소개페이지\r\n \t</div>\r\n-</template>\n-<template>\r\n-    <div>\r\n-      This page is about me.\r\n-    </div>\r\n\\ No newline at end of file\n-  </template>\n+</template>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1711545248467,
+            "name": "Commit-0",
+            "content": "<template>\r\n    <div>\r\n      This page is about me.\r\n    </div>\r\n  </template>"
+        }
+    ]
+}
