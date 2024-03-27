@@ -3,6 +3,9 @@
 	<button @click="enableCustomLayout">Update layout</button>
 </template>
 <script setup>
+useHead({
+  title: 'About'
+})
 // This will work in both `<script setup>` and `<script>`
 // definePageMeta({
 //   layout: "another",

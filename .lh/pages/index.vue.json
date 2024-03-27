@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1711545117913,
@@ -24,6 +24,30 @@
                 {
                     "date": 1711546496803,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,5 @@\n <template>\r\n \t<div>\r\n-\t\tHello\r\n+\t\t메인\r\n \t</div>\r\n-</template>\n-<template>\r\n-\t<div>\r\n-\t\tHello from the main page!\r\n-\t</div>\r\n-</template>\n-<template>\r\n-    <div>\r\n-      Hello from the main page!\r\n-    </div>\r\n-  </template>\n-<template>\r\n-    <div>\r\n-        hello\r\n-    </div>\r\n </template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711558316347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,32 @@\n <template>\r\n \t<div>\r\n \t\t메인\r\n \t</div>\r\n-</template>\n\\ No newline at end of file\n+</template>\r\n+\r\n+<script setup>\r\n+useSeoMeta({\r\n+  title: 'Main Page',\r\n+  description: 'This is the main page',\r\n+  ogTitle: 'Main Page',\r\n+  ogDescription: '[og:description]',\r\n+  ogImage: '[og:image]',\r\n+  ogUrl: '[og:url]',\r\n+  twitterTitle: 'Main Page',\r\n+  twitterDescription: '[twitter:description]',\r\n+  twitterImage: '[twitter:image]',\r\n+  twitterCard: 'summary'\r\n+})\r\n+useHead({\r\n+  htmlAttrs: {\r\n+    lang: 'en'\r\n+  },\r\n+  link: [\r\n+    {\r\n+      rel: 'icon',\r\n+      type: 'image/png',\r\n+      href: '/favicon.png'\r\n+    }\r\n+  ]\r\n+})\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711558353175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,8 @@\n   twitterImage: '[twitter:image]',\r\n   twitterCard: 'summary'\r\n })\r\n useHead({\r\n-  htmlAttrs: {\r\n-    lang: 'en'\r\n-  },\r\n   link: [\r\n     {\r\n       rel: 'icon',\r\n       type: 'image/png',\r\n"
+                },
+                {
+                    "date": 1711558368913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,29 @@\n+<template>\r\n+\t<div>\r\n+\t\t메인\r\n+\t</div>\r\n+</template>\r\n+\r\n+<script setup>\r\n+useSeoMeta({\r\n+  title: '메인',\r\n+  description: 'This is the main page',\r\n+  ogTitle: 'Main Page',\r\n+  ogDescription: '[og:description]',\r\n+  ogImage: '[og:image]',\r\n+  ogUrl: '[og:url]',\r\n+  twitterTitle: 'Main Page',\r\n+  twitterDescription: '[twitter:description]',\r\n+  twitterImage: '[twitter:image]',\r\n+  twitterCard: 'summary'\r\n+})\r\n+useHead({\r\n+  link: [\r\n+    {\r\n+      rel: 'icon',\r\n+      type: 'image/png',\r\n+      href: '/favicon.png'\r\n+    }\r\n+  ]\r\n+})\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711558382888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,29 @@\n+<template>\r\n+\t<div>\r\n+\t\t메인\r\n+\t</div>\r\n+</template>\r\n+\r\n+<script setup>\r\n+useSeoMeta({\r\n+  title: '메인',\r\n+  description: 'nuxt 공부 메인페이지',\r\n+  ogTitle: 'Main Page',\r\n+  ogDescription: '[og:description]',\r\n+  ogImage: '[og:image]',\r\n+  ogUrl: '[og:url]',\r\n+  twitterTitle: 'Main Page',\r\n+  twitterDescription: '[twitter:description]',\r\n+  twitterImage: '[twitter:image]',\r\n+  twitterCard: 'summary'\r\n+})\r\n+useHead({\r\n+  link: [\r\n+    {\r\n+      rel: 'icon',\r\n+      type: 'image/png',\r\n+      href: '/favicon.png'\r\n+    }\r\n+  ]\r\n+})\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711558388001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n <script setup>\r\n useSeoMeta({\r\n   title: '메인',\r\n   description: 'nuxt 공부 메인페이지',\r\n-  ogTitle: 'Main Page',\r\n+  ogTitle: '메인페이지',\r\n   ogDescription: '[og:description]',\r\n   ogImage: '[og:image]',\r\n   ogUrl: '[og:url]',\r\n   twitterTitle: 'Main Page',\r\n@@ -25,63 +25,5 @@\n       href: '/favicon.png'\r\n     }\r\n   ]\r\n })\r\n-</script>\n-<template>\r\n-\t<div>\r\n-\t\t메인\r\n-\t</div>\r\n-</template>\r\n-\r\n-<script setup>\r\n-useSeoMeta({\r\n-  title: '메인',\r\n-  description: 'This is the main page',\r\n-  ogTitle: 'Main Page',\r\n-  ogDescription: '[og:description]',\r\n-  ogImage: '[og:image]',\r\n-  ogUrl: '[og:url]',\r\n-  twitterTitle: 'Main Page',\r\n-  twitterDescription: '[twitter:description]',\r\n-  twitterImage: '[twitter:image]',\r\n-  twitterCard: 'summary'\r\n-})\r\n-useHead({\r\n-  link: [\r\n-    {\r\n-      rel: 'icon',\r\n-      type: 'image/png',\r\n-      href: '/favicon.png'\r\n-    }\r\n-  ]\r\n-})\r\n-</script>\n-<template>\r\n-\t<div>\r\n-\t\t메인\r\n-\t</div>\r\n-</template>\r\n-\r\n-<script setup>\r\n-useSeoMeta({\r\n-  title: 'Main Page',\r\n-  description: 'This is the main page',\r\n-  ogTitle: 'Main Page',\r\n-  ogDescription: '[og:description]',\r\n-  ogImage: '[og:image]',\r\n-  ogUrl: '[og:url]',\r\n-  twitterTitle: 'Main Page',\r\n-  twitterDescription: '[twitter:description]',\r\n-  twitterImage: '[twitter:image]',\r\n-  twitterCard: 'summary'\r\n-})\r\n-useHead({\r\n-  link: [\r\n-    {\r\n-      rel: 'icon',\r\n-      type: 'image/png',\r\n-      href: '/favicon.png'\r\n-    }\r\n-  ]\r\n-})\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711558544893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n   ogTitle: '메인페이지',\r\n   ogDescription: '[og:description]',\r\n   ogImage: '[og:image]',\r\n   ogUrl: '[og:url]',\r\n-  twitterTitle: 'Main Page',\r\n-  twitterDescription: '[twitter:description]',\r\n+  twitterTitle: '트위치 Main Page',\r\n+  twitterDescription: '트위치 Main Page',\r\n   twitterImage: '[twitter:image]',\r\n   twitterCard: 'summary'\r\n })\r\n useHead({\r\n"
                 }
             ],
             "date": 1711545117913,

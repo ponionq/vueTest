@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 35,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1711545248467,
@@ -148,6 +148,10 @@
                 {
                     "date": 1711555547036,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+<template>\r\n+\t<p>소개페이지</p>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+</template>\r\n+<script setup>\r\n+// This will work in both `<script setup>` and `<script>`\r\n+// definePageMeta({\r\n+//   layout: \"another\",\r\n+// });\r\n+// function enableCustomLayout() {\r\n+//   setPageLayout('another')\r\n+// }\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711558279170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+<template>\r\n+\t<p>소개페이지</p>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+</template>\r\n+<script setup>\r\n+useHead({\r\n+  title: 'About'\r\n+})\r\n+// This will work in both `<script setup>` and `<script>`\r\n+// definePageMeta({\r\n+//   layout: \"another\",\r\n+// });\r\n+// function enableCustomLayout() {\r\n+//   setPageLayout('another')\r\n+// }\r\n+</script>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1711545248467,
