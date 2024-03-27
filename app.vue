@@ -5,3 +5,6 @@
     </NuxtLayout>
   </div>
 </template>
+<!-- <script setup>
+  const layout = 'anther'
+</script> -->

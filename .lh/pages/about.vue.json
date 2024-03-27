@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1711545248467,
@@ -16,6 +16,138 @@
                 {
                     "date": 1711546502045,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n <template>\r\n \t<div>\r\n-\t\tThis page is about me.\r\n+\t\t소개페이지\r\n \t</div>\r\n-</template>\n-<template>\r\n-    <div>\r\n-      This page is about me.\r\n-    </div>\r\n\\ No newline at end of file\n-  </template>\n+</template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553425510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,10 @@\n <template>\r\n \t<div>\r\n \t\t소개페이지\r\n \t</div>\r\n-</template>\n\\ No newline at end of file\n+</template>\r\n+<script setup lang=\"ts\">\r\n+definePageMeta({\r\n+  layout: 'about'\r\n+})\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553515959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n <template>\r\n \t<div>\r\n-\t\t소개페이지\r\n+\t\t<p>소개페이지</p>\r\n+\r\n \t</div>\r\n+\t<div>\r\n+\t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+\t</div>\r\n </template>\r\n <script setup lang=\"ts\">\r\n definePageMeta({\r\n   layout: 'about'\r\n"
+                },
+                {
+                    "date": 1711553556804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+<template>\r\n+\t<div>\r\n+\t\t<p>소개페이지</p>\r\n+\r\n+\t</div>\r\n+\t<div>\r\n+\t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+\t</div>\r\n+</template>\r\n+<script setup lang=\"ts\">\r\n+function enableCustomLayout () {\r\n+  setPageLayout('custom')\r\n+}\r\n+definePageMeta({\r\n+  layout: false,\r\n+});\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553650370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+<template>\r\n+\t<div>\r\n+\t\t<p>소개페이지</p>\r\n+\r\n+\t</div>\r\n+\t<div>\r\n+\t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+\t</div>\r\n+</template>\r\n+<script setup>\r\n+\r\n+function enableCustomLayout () {\r\n+\tsetPageLayout('custom');\r\n+}\r\n+\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553704963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,36 +12,5 @@\n function enableCustomLayout () {\r\n \tsetPageLayout('custom');\r\n }\r\n \r\n-</script>\n-<template>\r\n-\t<div>\r\n-\t\t<p>소개페이지</p>\r\n-\r\n-\t</div>\r\n-\t<div>\r\n-\t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n-\t</div>\r\n-</template>\r\n-<script setup lang=\"ts\">\r\n-function enableCustomLayout () {\r\n-  setPageLayout('custom')\r\n-}\r\n-definePageMeta({\r\n-  layout: false,\r\n-});\r\n-</script>\n-<template>\r\n-\t<div>\r\n-\t\t<p>소개페이지</p>\r\n-\r\n-\t</div>\r\n-\t<div>\r\n-\t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n-\t</div>\r\n-</template>\r\n-<script setup lang=\"ts\">\r\n-definePageMeta({\r\n-  layout: 'about'\r\n-})\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553749648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <template>\r\n \t<div>\r\n \t\t<p>소개페이지</p>\r\n-\r\n-\t</div>\r\n-\t<div>\r\n+\t\t<div>\r\n \t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n \t</div>\r\n+\t</div>\r\n+\t\r\n </template>\r\n <script setup>\r\n \r\n function enableCustomLayout () {\r\n"
+                },
+                {
+                    "date": 1711553786349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <template>\r\n \t<div>\r\n \t\t<p>소개페이지</p>\r\n-\t\t<div>\r\n+\r\n+\t</div>\r\n+\t<div>\r\n \t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n \t</div>\r\n-\t</div>\r\n-\t\r\n </template>\r\n <script setup>\r\n \r\n function enableCustomLayout () {\r\n"
+                },
+                {
+                    "date": 1711553797255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n <template>\r\n+\t<p>소개페이지</p>\r\n \t<div>\r\n-\t\t<p>소개페이지</p>\r\n-\r\n-\t</div>\r\n-\t<div>\r\n \t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n \t</div>\r\n </template>\r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1711553840883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <template>\r\n \t<p>소개페이지</p>\r\n \t<div>\r\n+\t\t<button>버튼</button>\r\n \t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n \t</div>\r\n </template>\r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1711553914735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,13 @@\n \t</div>\r\n </template>\r\n <script setup>\r\n \r\n-function enableCustomLayout () {\r\n-\tsetPageLayout('custom');\r\n-}\r\n+// function enableCustomLayout () {\r\n+// \tsetPageLayout('custom');\r\n+// }\r\n \r\n+\r\n+definePageMeta({\r\n+  layout: 'custom'\r\n+})\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553938172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n <template>\r\n \t<p>소개페이지</p>\r\n-\t<div>\r\n-\t\t<button>버튼</button>\r\n-\t\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n-\t</div>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n <script setup>\r\n \r\n // function enableCustomLayout () {\r\n"
+                },
+                {
+                    "date": 1711553943621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n \t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n <script setup>\r\n \r\n-// function enableCustomLayout () {\r\n-// \tsetPageLayout('custom');\r\n-// }\r\n+function enableCustomLayout () {\r\n+\tsetPageLayout('custom');\r\n+}\r\n \r\n \r\n definePageMeta({\r\n   layout: 'custom'\r\n"
+                },
+                {
+                    "date": 1711553951985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n \tsetPageLayout('custom');\r\n }\r\n \r\n \r\n-definePageMeta({\r\n-  layout: 'custom'\r\n-})\r\n+// definePageMeta({\r\n+//   layout: 'custom'\r\n+// })\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554086316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,12 @@\n <template>\r\n \t<p>소개페이지</p>\r\n \t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n-<script setup>\r\n-\r\n+<script setup lang=\"ts\">\r\n function enableCustomLayout () {\r\n-\tsetPageLayout('custom');\r\n+  setPageLayout('custom')\r\n }\r\n-\r\n-\r\n-// definePageMeta({\r\n-//   layout: 'custom'\r\n-// })\r\n+definePageMeta({\r\n+  layout: false,\r\n+});\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554102109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+<script setup lang=\"ts\">\r\n+function enableCustomLayout () {\r\n+  setPageLayout('custom')\r\n+}\r\n+definePageMeta({\r\n+  layout: false,\r\n+});\r\n+</script>\r\n+<template>\r\n+\t<p>소개페이지</p>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+</template>\r\n"
+                },
+                {
+                    "date": 1711554121277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,9 @@\n-<script setup lang=\"ts\">\r\n-function enableCustomLayout () {\r\n-  setPageLayout('custom')\r\n-}\r\n-definePageMeta({\r\n-  layout: false,\r\n-});\r\n-</script>\r\n <template>\r\n \t<p>소개페이지</p>\r\n \t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n-<template>\r\n-\t<p>소개페이지</p>\r\n-\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n-</template>\r\n-<script setup lang=\"ts\">\r\n+<script setup>\r\n function enableCustomLayout () {\r\n   setPageLayout('custom')\r\n }\r\n definePageMeta({\r\n"
+                },
+                {
+                    "date": 1711554126639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+<template>\r\n+\t<p>소개페이지</p>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+</template>\r\n+<script setup>\r\n+function enableCustomLayout () {\r\n+\tsetPageLayout('custom')\r\n+}\r\n+\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554162805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,20 +3,8 @@\n \t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n <script setup>\r\n function enableCustomLayout () {\r\n-\tsetPageLayout('custom')\r\n+\tsetPageLayout('other')\r\n }\r\n \r\n-</script>\n-<template>\r\n-\t<p>소개페이지</p>\r\n-\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n-</template>\r\n-<script setup>\r\n-function enableCustomLayout () {\r\n-  setPageLayout('custom')\r\n-}\r\n-definePageMeta({\r\n-  layout: false,\r\n-});\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554196812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n \t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n <script setup>\r\n function enableCustomLayout () {\r\n-\tsetPageLayout('other')\r\n+  setPageLayout('custom')\r\n }\r\n-\r\n+definePageMeta({\r\n+  layout: false,\r\n+});\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554222235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,6 @@\n <script setup>\r\n function enableCustomLayout () {\r\n   setPageLayout('custom')\r\n }\r\n-definePageMeta({\r\n-  layout: false,\r\n-});\r\n+\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554228744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+<template>\r\n+\t<p>소개페이지</p>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+</template>\r\n+<script setup>\r\n+function enableCustomLayout () {\r\n+  setPageLayout('custom')\r\n+}\r\n+\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554319610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n \t<p>소개페이지</p>\r\n \t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n <script setup>\r\n-function enableCustomLayout () {\r\n-  setPageLayout('custom')\r\n+function enableCustomLayout() {\r\n+  setPageLayout('another')\r\n }\r\n-\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554381976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+<template>\r\n+\t<p>소개페이지</p>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+</template>\r\n+<script setup>\r\n+// This will work in both `<script setup>` and `<script>`\r\n+// definePageMeta({\r\n+//   layout: \"another\",\r\n+// });\r\n+// function enableCustomLayout() {\r\n+//   setPageLayout('another')\r\n+// }\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711555050182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n \t<p>소개페이지</p>\r\n-\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+\t<!-- <button @click=\"enableCustomLayout\">Update layout</button> -->\r\n </template>\r\n <script setup>\r\n // This will work in both `<script setup>` and `<script>`\r\n // definePageMeta({\r\n@@ -9,24 +9,5 @@\n // });\r\n // function enableCustomLayout() {\r\n //   setPageLayout('another')\r\n // }\r\n-</script>\n-<template>\r\n-\t<p>소개페이지</p>\r\n-\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n-</template>\r\n-<script setup>\r\n-function enableCustomLayout() {\r\n-  setPageLayout('another')\r\n-}\r\n-</script>\n-<template>\r\n-\t<p>소개페이지</p>\r\n-\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n-</template>\r\n-<script setup>\r\n-function enableCustomLayout () {\r\n-  setPageLayout('custom')\r\n-}\r\n-\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711555083533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n <template>\r\n \t<p>소개페이지</p>\r\n-\t<!-- <button @click=\"enableCustomLayout\">Update layout</button> -->\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n-<script setup>\r\n+<!-- <script setup>\r\n // This will work in both `<script setup>` and `<script>`\r\n // definePageMeta({\r\n //   layout: \"another\",\r\n // });\r\n // function enableCustomLayout() {\r\n //   setPageLayout('another')\r\n\\ No newline at end of file\n // }\r\n-</script>\n+</script> -->\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711555103753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n \t<p>소개페이지</p>\r\n-\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+\r\n </template>\r\n <!-- <script setup>\r\n // This will work in both `<script setup>` and `<script>`\r\n // definePageMeta({\r\n"
+                },
+                {
+                    "date": 1711555235491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,5 @@\n <template>\r\n-\t<p>소개페이지</p>\r\n-\r\n-</template>\r\n-<!-- <script setup>\r\n-// This will work in both `<script setup>` and `<script>`\r\n-// definePageMeta({\r\n-//   layout: \"another\",\r\n-// });\r\n-// function enableCustomLayout() {\r\n-//   setPageLayout('another')\r\n-// }\r\n-</script> -->\n\\ No newline at end of file\n+\t<div>\r\n+\t\t소개페이지\r\n+\t</div>\r\n+</template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711555244836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,13 @@\n <template>\r\n-\t<div>\r\n-\t\t소개페이지\r\n-\t</div>\r\n-</template>\n\\ No newline at end of file\n+\t<p>소개페이지</p>\r\n+\r\n+</template>\r\n+<!-- <script setup>\r\n+// This will work in both `<script setup>` and `<script>`\r\n+// definePageMeta({\r\n+//   layout: \"another\",\r\n+// });\r\n+// function enableCustomLayout() {\r\n+//   setPageLayout('another')\r\n+// }\r\n+</script> -->\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711555352237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n <template>\r\n \t<p>소개페이지</p>\r\n-\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n </template>\r\n <!-- <script setup>\r\n // This will work in both `<script setup>` and `<script>`\r\n // definePageMeta({\r\n //   layout: \"another\",\r\n // });\r\n-// function enableCustomLayout() {\r\n+<!-- // function enableCustomLayout() {\r\n //   setPageLayout('another')\r\n-// }\r\n+// } -->\r\n </script> -->\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711555359384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+<template>\r\n+\t<p>소개페이지</p>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+</template>\r\n+<script setup>\r\n+// This will work in both `<script setup>` and `<script>`\r\n+// definePageMeta({\r\n+//   layout: \"another\",\r\n+// });\r\n+function enableCustomLayout() {\r\n+  setPageLayout('another')\r\n+}\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711555378805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,21 +6,8 @@\n // This will work in both `<script setup>` and `<script>`\r\n // definePageMeta({\r\n //   layout: \"another\",\r\n // });\r\n-function enableCustomLayout() {\r\n-  setPageLayout('another')\r\n-}\r\n-</script>\n-<template>\r\n-\t<p>소개페이지</p>\r\n-\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n-</template>\r\n-<!-- <script setup>\r\n-// This will work in both `<script setup>` and `<script>`\r\n-// definePageMeta({\r\n-//   layout: \"another\",\r\n-// });\r\n-<!-- // function enableCustomLayout() {\r\n+// function enableCustomLayout() {\r\n //   setPageLayout('another')\r\n-// } -->\r\n\\ No newline at end of file\n-</script> -->\n+// }\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711555538619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <template>\r\n \t<p>소개페이지</p>\r\n \t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+\t<!-- Before -->\r\n+<button class=\"text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800\">...</button>\r\n </template>\r\n <script setup>\r\n // This will work in both `<script setup>` and `<script>`\r\n // definePageMeta({\r\n"
+                },
+                {
+                    "date": 1711555547036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+<template>\r\n+\t<p>소개페이지</p>\r\n+\t<button @click=\"enableCustomLayout\">Update layout</button>\r\n+</template>\r\n+<script setup>\r\n+// This will work in both `<script setup>` and `<script>`\r\n+// definePageMeta({\r\n+//   layout: \"another\",\r\n+// });\r\n+// function enableCustomLayout() {\r\n+//   setPageLayout('another')\r\n+// }\r\n+</script>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1711545248467,

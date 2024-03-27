@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1711545140081,
@@ -28,6 +28,46 @@
                 {
                     "date": 1711546631018,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,7 @@\n <template>\n-  <NuxtLayout>\n-    <NuxtPage />\n-  </NuxtLayout>\n-</template>\n-<template>\n-  <nav>\n-    <ul>\n-      <li>\n-        <NuxtLink to=\"/\">Main</NuxtLink>\n-      </li>\n-      <li>\n-        <NuxtLink to=\"/about\">About</NuxtLink>\n-      </li>\n-    </ul>\n-  </nav>\n   <div>\n-    <NuxtPage />\n+    <NuxtLayout>\n+      <NuxtPage />\n+    </NuxtLayout>\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1711553097989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,4 +4,7 @@\n       <NuxtPage />\n     </NuxtLayout>\n   </div>\n </template>\n+<script setup>\n+\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553116021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n     </NuxtLayout>\n   </div>\n </template>\n <script setup>\n-\n+  const layout = 'anther'\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553135745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n   <div>\n-    <NuxtLayout>\n+    <NuxtLayout :name=\"layout\">\n       <NuxtPage />\n     </NuxtLayout>\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1711553343211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+<template>\n+  <div>\n+    <NuxtLayout :name=\"layout\">\n+      <NuxtPage />\n+    </NuxtLayout>\n+  </div>\n+</template>\n+<script setup>\n+  const layout = 'anther'\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553354683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,10 @@\n <template>\n   <div>\n-    <NuxtLayout :name=\"layout\">\n+    <NuxtLayout >\n       <NuxtPage />\n     </NuxtLayout>\n   </div>\n </template>\n-<script setup>\n+<!-- <script setup>\n   const layout = 'anther'\n-</script>\n-<template>\n-  <div>\n-    <NuxtLayout :name=\"layout\">\n-      <NuxtPage />\n-    </NuxtLayout>\n-  </div>\n-</template>\n-<script setup>\n\\ No newline at end of file\n-  const layout = 'anther'\n-</script>\n+</script> -->\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553363059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\n   <div>\n-    <NuxtLayout >\n+    <NuxtLayout :name=\"layout\">\n       <NuxtPage />\n     </NuxtLayout>\n   </div>\n </template>\n-<!-- <script setup>\n+<script setup>\n\\ No newline at end of file\n   const layout = 'anther'\n-</script> -->\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711553445848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\n   <div>\n-    <NuxtLayout :name=\"layout\">\n+    <NuxtLayout >\n       <NuxtPage />\n     </NuxtLayout>\n   </div>\n </template>\n-<script setup>\n+<!-- <script setup>\n\\ No newline at end of file\n   const layout = 'anther'\n-</script>\n+</script> -->\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554060764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n   <div>\n-    <NuxtLayout >\n+    <NuxtLayout :name=\"layout\">\n       <NuxtPage />\n     </NuxtLayout>\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1711554066723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,9 @@\n   </div>\n </template>\n <!-- <script setup>\n   const layout = 'anther'\n-</script> -->\n\\ No newline at end of file\n+</script> -->\n+<script setup lang=\"ts\">\n+// You might choose this based on an API call or logged-in status\n+const layout = \"custom\";\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711554081950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,10 @@\n <template>\n   <div>\n-    <NuxtLayout :name=\"layout\">\n+    <NuxtLayout >\n       <NuxtPage />\n     </NuxtLayout>\n   </div>\n </template>\n <!-- <script setup>\n   const layout = 'anther'\n-</script> -->\n-<script setup lang=\"ts\">\n-// You might choose this based on an API call or logged-in status\n-const layout = \"custom\";\n\\ No newline at end of file\n-</script>\n+</script> -->\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1711545140081,
