@@ -11,6 +11,12 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    '@nuxtjs/tailwindcss'
-  ]
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
+    '@nuxt/content',
+  ],
+  colorMode: {
+    preference: 'system', 
+    classSuffix: ''
+  }
 })

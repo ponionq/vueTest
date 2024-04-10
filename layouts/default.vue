@@ -1,11 +1,17 @@
 <template>
   <div class="container mx-auto max-w-2xl">
     <header class="flex justify-between items-center mt-5">
-      <div>
-        <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-cyan-200 hover:text-cyan-950 ">danbana</NuxtLink>
+      <div class="flex items-center space-x-12">
+        <div>
+          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-cyan-200 hover:text-cyan-950 dark:bg-slate-800">danbana</NuxtLink>
+        </div>
+
+        <Menu />
       </div>
 
-      <Menu />
+      <ClientOnly>
+        <ColorModeSelector />
+      </ClientOnly>
     </header>
 
     <main class="p-2 mt-10">
@@ -16,6 +22,10 @@
 
 
 <script setup>
+const colorMode = useColorMode()
+console.log(colorMode.preference)
+colorMode.preference = 'right';
+
 useHead({
   titleTemplate: 'dana nuxt 공부',
   link: [
@@ -35,5 +45,8 @@ useHead({
 <style>
 body {
   font-family: 'Roboto';
+}
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300
 }
 </style>
