@@ -8,7 +8,7 @@ head:
 ---
 # Introduction to Vue 3
 
-![Vue 3 Introduction](/images/vue-logo.png)
+![alt 텍스트가 들어갑니다.](/images/img.png)
 
 ## What is Vue 3?
 

@@ -27,7 +27,7 @@ console.log(colorMode.preference)
 colorMode.preference = 'right';
 
 useHead({
-  titleTemplate: 'dana nuxt 공부',
+  // titleTemplate: 'dana nuxt 공부',
   link: [
     {
       rel: 'preconnect',
