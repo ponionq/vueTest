@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1711545791834,
@@ -120,6 +120,34 @@
                 {
                     "date": 1713018898432,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,13 @@\n //.limit(5) : 보여질 갯 수 옵션\r\n \r\n //.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n+\r\n+// queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n         .only(['id', 'title'])\r\n         .sort({ title: 1 })\r\n-        .where({ isArchived: true })\r\n         .find()\r\n     )\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713019074536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <section>\r\n         <ul>\r\n-        <li v-for=\"post in posts\" :key=\"post.id\">\r\n-            <NuxtLink :to=\"post.id\">{{ post.title }}</NuxtLink>\r\n+        <li v-for=\"post in posts\" :key=\"post._path\">\r\n+            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n         </li>\r\n         </ul>\r\n     </section>\r\n </template>\r\n@@ -13,14 +13,8 @@\n //https://content.nuxt.com/composables/query-content#wherequery\r\n //.limit(5) : 보여질 갯 수 옵션\r\n \r\n //.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n-//findOne() :첫 번째로 일치하는 콘텐츠\r\n-\r\n-// queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n-        .only(['id', 'title'])\r\n-        .sort({ title: 1 })\r\n-        .find()\r\n-    )\r\n+//findOne() :\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713019093230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <section>\r\n         <ul>\r\n-        <li v-for=\"post in posts\" :key=\"post._path\">\r\n-            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n+        <li v-for=\"post in posts\" :key=\"post.id\">\r\n+            <NuxtLink :to=\"post.id\">{{ post.title }}</NuxtLink>\r\n         </li>\r\n         </ul>\r\n     </section>\r\n </template>\r\n@@ -13,8 +13,14 @@\n //https://content.nuxt.com/composables/query-content#wherequery\r\n //.limit(5) : 보여질 갯 수 옵션\r\n \r\n //.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n-//findOne() :\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n+//findOne() :첫 번째로 일치하는 콘텐츠\r\n+\r\n+// queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n+        .only(['id', 'title'])\r\n+        .sort({ title: 1 })\r\n+        .find()\r\n+    )\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713019109905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n \r\n // queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n-        .only(['id', 'title'])\r\n+        .only(['_path', 'title'])\r\n         .sort({ title: 1 })\r\n         .find()\r\n     )\r\n console.log(posts)\r\n"
+                },
+                {
+                    "date": 1713019118202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+<template>\r\n+    <section>\r\n+        <ul>\r\n+        <li v-for=\"post in posts\" :key=\"post._path\">\r\n+            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n+        </li>\r\n+        </ul>\r\n+    </section>\r\n+</template>\r\n+\r\n+<script setup>\r\n+// sort 알파벳순\r\n+//https://content.nuxt.com/composables/query-content#wherequery\r\n+//.limit(5) : 보여질 갯 수 옵션\r\n+\r\n+//.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n+//findOne() :첫 번째로 일치하는 콘텐츠\r\n+\r\n+// queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n+        .only(['_path', 'title'])\r\n+        .sort({ title: 1 })\r\n+        .find()\r\n+    )\r\n+console.log(posts)\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713019139034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,33 +1,7 @@\n <template>\r\n     <section>\r\n         <ul>\r\n-        <li v-for=\"post in posts\" :key=\"post._path\">\r\n-            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n-        </li>\r\n-        </ul>\r\n-    </section>\r\n-</template>\r\n-\r\n-<script setup>\r\n-// sort 알파벳순\r\n-//https://content.nuxt.com/composables/query-content#wherequery\r\n-//.limit(5) : 보여질 갯 수 옵션\r\n-\r\n-//.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n-//findOne() :첫 번째로 일치하는 콘텐츠\r\n-\r\n-// queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n-        .only(['_path', 'title'])\r\n-        .sort({ title: 1 })\r\n-        .find()\r\n-    )\r\n-console.log(posts)\r\n-</script>\n-<template>\r\n-    <section>\r\n-        <ul>\r\n         <li v-for=\"post in posts\" :key=\"post.id\">\r\n             <NuxtLink :to=\"post.id\">{{ post.title }}</NuxtLink>\r\n         </li>\r\n         </ul>\r\n@@ -43,9 +17,9 @@\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n \r\n // queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n-        .only(['_path', 'title'])\r\n+        .only(['id', 'title'])\r\n         .sort({ title: 1 })\r\n         .find()\r\n     )\r\n console.log(posts)\r\n"
+                },
+                {
+                    "date": 1713019155961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <section>\r\n         <ul>\r\n-        <li v-for=\"post in posts\" :key=\"post.id\">\r\n-            <NuxtLink :to=\"post.id\">{{ post.title }}</NuxtLink>\r\n+        <li v-for=\"post in posts\" :key=\"post._path\">\r\n+            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n         </li>\r\n         </ul>\r\n     </section>\r\n </template>\r\n@@ -17,9 +17,9 @@\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n \r\n // queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n-        .only(['id', 'title'])\r\n+        .only(['_path', 'title'])\r\n         .sort({ title: 1 })\r\n         .find()\r\n     )\r\n console.log(posts)\r\n"
+                },
+                {
+                    "date": 1713019383654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <section>\r\n+    <section class=\"not-prose\">\r\n         <ul>\r\n         <li v-for=\"post in posts\" :key=\"post._path\">\r\n             <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n         </li>\r\n@@ -17,8 +17,9 @@\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n \r\n // queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n+        .where({ _path: { $ne: '/blog' } })\r\n         .only(['_path', 'title'])\r\n         .sort({ title: 1 })\r\n         .find()\r\n     )\r\n"
                 }
             ],
             "date": 1711545791834,
