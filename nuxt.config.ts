@@ -25,7 +25,15 @@ export default defineNuxtConfig({
       theme: {
         default: 'min-light',
         dark: 'min-dark'
-      }
+      },
+      langs: [
+        'c',
+        'cpp',
+        'java',
+        'javascript',
+        'html',
+        'css',
+      ]
     }
   },
   colorMode: {

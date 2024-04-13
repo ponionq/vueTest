@@ -3,11 +3,123 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 28,
             "patches": [
                 {
                     "date": 1711545791834,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1713016772810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,16 @@\n-<template>\r\n-    <div>포스트 리스트</div>\r\n-</template>\n\\ No newline at end of file\n+<section>\r\n+    <ul>\r\n+      <li v-for=\"post in posts\" :key=\"post._path\">\r\n+        <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n+      </li>\r\n+    </ul>\r\n+  </section>\r\n+</template>\r\n+\r\n+<script setup>\r\n+const { data: posts } = await useAsyncData(\r\n+  'blog-list',\r\n+  () => queryContent('/blog').only(['_path', 'title']).find()\r\n+)\r\n+console.log(posts)\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713016780598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+<template></template>\r\n <section>\r\n     <ul>\r\n       <li v-for=\"post in posts\" :key=\"post._path\">\r\n         <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n"
+                },
+                {
+                    "date": 1713016790326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n-<template></template>\r\n-<section>\r\n-    <ul>\r\n-      <li v-for=\"post in posts\" :key=\"post._path\">\r\n-        <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n-      </li>\r\n-    </ul>\r\n-  </section>\r\n+<template>\r\n+    <section>\r\n+        <ul>\r\n+        <li v-for=\"post in posts\" :key=\"post._path\">\r\n+            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n+        </li>\r\n+        </ul>\r\n+    </section>\r\n </template>\r\n \r\n <script setup>\r\n const { data: posts } = await useAsyncData(\r\n"
+                },
+                {
+                    "date": 1713016923163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n </template>\r\n \r\n <script setup>\r\n const { data: posts } = await useAsyncData(\r\n-  'blog-list',\r\n+\r\n   () => queryContent('/blog').only(['_path', 'title']).find()\r\n )\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713016930013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n </template>\r\n \r\n <script setup>\r\n const { data: posts } = await useAsyncData(\r\n-\r\n   () => queryContent('/blog').only(['_path', 'title']).find()\r\n )\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713017102311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData(\r\n-  () => queryContent('/blog').only(['_path', 'title']).find()\r\n-)\r\n+const { data: posts } = await useAsyncData(() => queryContent('/blog').only(['_path', 'title']).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713017118441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData(() => queryContent('/blog').only(['_path', 'title']).find())\r\n+const { data: posts } = await useAsyncData(() => queryContent('/blog').only(['_path']).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713017124455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData(() => queryContent('/blog').only(['_path']).find())\r\n+const { data: posts } = await useAsyncData(() => queryContent('/blog').only(['_path', '']).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713017157156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData(() => queryContent('/blog').only(['_path', '']).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713017333494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').findOne())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713017368354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').findOne())\r\n+// const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').findOne())\r\n+const { data } = await useAsyncData('blog-list', () => queryContent('/blog').findOne())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713017376458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-// const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').findOne())\r\n-const { data } = await useAsyncData('blog-list', () => queryContent('/blog').findOne())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018437002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018453426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018458859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018557918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018564044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018582399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n+// sort 순선대로 나오게 하고 싶을경우\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018590298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,8 @@\n </template>\r\n \r\n <script setup>\r\n // sort 순선대로 나오게 하고 싶을경우\r\n+//https://content.nuxt.com/composables/query-content#wherequery\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018623773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-// sort 순선대로 나오게 하고 싶을경우\r\n+// sort : 알파벳순\r\n //https://content.nuxt.com/composables/query-content#wherequery\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).limit(1).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018632404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n \r\n <script setup>\r\n // sort : 알파벳순\r\n //https://content.nuxt.com/composables/query-content#wherequery\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).limit(1).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).limit(5).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018658644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n     </section>\r\n </template>\r\n \r\n <script setup>\r\n-// sort : 알파벳순\r\n+// sort 알파벳순\r\n //https://content.nuxt.com/composables/query-content#wherequery\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).limit(5).find())\r\n+//.limit(5) : 보여질 갯 수 옵션\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018780528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <section>\r\n         <ul>\r\n-        <li v-for=\"post in posts\" :key=\"post._path\">\r\n-            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n+        <li v-for=\"post in posts\" :key=\"post.id\">\r\n+            <NuxtLink :to=\"post.id\">{{ post.title }}</NuxtLink>\r\n         </li>\r\n         </ul>\r\n     </section>\r\n </template>\r\n@@ -11,7 +11,10 @@\n <script setup>\r\n // sort 알파벳순\r\n //https://content.nuxt.com/composables/query-content#wherequery\r\n //.limit(5) : 보여질 갯 수 옵션\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n+\r\n+//.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n+//findOne() :첫 번째로 일치하는 콘텐츠\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['id', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018794166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <section>\r\n         <ul>\r\n-        <li v-for=\"post in posts\" :key=\"post.id\">\r\n-            <NuxtLink :to=\"post.id\">{{ post.title }}</NuxtLink>\r\n+        <li v-for=\"post in posts\" :key=\"post._path\">\r\n+            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n         </li>\r\n         </ul>\r\n     </section>\r\n </template>\r\n@@ -14,7 +14,7 @@\n //.limit(5) : 보여질 갯 수 옵션\r\n \r\n //.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['id', 'title']).sort({ title: 1 }).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018833967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <section>\r\n         <ul>\r\n-        <li v-for=\"post in posts\" :key=\"post._path\">\r\n-            <NuxtLink :to=\"post._path\">{{ post.title }}</NuxtLink>\r\n+        <li v-for=\"post in posts\" :key=\"post.id\">\r\n+            <NuxtLink :to=\"post.id\">{{ post.title }}</NuxtLink>\r\n         </li>\r\n         </ul>\r\n     </section>\r\n </template>\r\n@@ -14,7 +14,7 @@\n //.limit(5) : 보여질 갯 수 옵션\r\n \r\n //.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['_path', 'title']).sort({ title: 1 }).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['id', 'title']).sort({ title: 1 }).where({ isArchived: false }).find())\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018848266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,12 @@\n //.limit(5) : 보여질 갯 수 옵션\r\n \r\n //.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog').only(['id', 'title']).sort({ title: 1 }).where({ isArchived: false }).find())\r\n+const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n+        .only(['id', 'title'])\r\n+        .sort({ title: 1 })\r\n+        .where({ isArchived: false })\r\n+        .find()\r\n+    )\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018853529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n         .only(['id', 'title'])\r\n         .sort({ title: 1 })\r\n-        .where({ isArchived: false })\r\n+        .where({ isArchived: true })\r\n         .find()\r\n     )\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713018898432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,13 @@\n //.limit(5) : 보여질 갯 수 옵션\r\n \r\n //.only 필드의 하위 집합 https://content.nuxt.com/composables/query-content#onlykeys\r\n //findOne() :첫 번째로 일치하는 콘텐츠\r\n+\r\n+// queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기\r\n const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')\r\n         .only(['id', 'title'])\r\n         .sort({ title: 1 })\r\n-        .where({ isArchived: true })\r\n         .find()\r\n     )\r\n console.log(posts)\r\n </script>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1711545791834,

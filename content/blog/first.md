@@ -1,5 +1,5 @@
 ---
-title: 'head 안에 타이틀 넣는 곳 (개발자 도구 열어서 확인)'
+title: 'blog first-title'
 description: 'meta description of the page'
 head:
   meta:

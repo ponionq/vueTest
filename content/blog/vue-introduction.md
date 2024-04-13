@@ -6,7 +6,7 @@ head:
     - name: 'og:image'
       content: /images/vue-logo.png
 ---
-# Introduction to Vue 3
+# a
 
 ![alt 텍스트가 들어갑니다.](/images/img.png)
 
