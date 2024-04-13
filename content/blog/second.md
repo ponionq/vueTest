@@ -5,6 +5,7 @@ head:
   meta:
     - name: 'og:image'
       content: /images/vue-logo.png
+publishedAt: 2024-07-12 17:17:00
 ---
 <!-- 타이틀을 지정안해주면 h1 태그가 타이틀 대신 표시 된다 -->
 <!-- # Introduction to Vue 3 -->

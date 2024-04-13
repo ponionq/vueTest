@@ -5,7 +5,9 @@ head:
   meta:
     - name: 'og:image'
       content: /images/vue-logo.png
-      
+
+publishedAt: 2024-07-12 18:17:00
+toc: true
 ---
 # a
 

@@ -1,6 +1,6 @@
 <template>
 	<!-- <h1>소개페이지</h1> -->
-	<article class="prose dark:prose-invert prose-h1:text-2xl">
+	<article class="prose dark:prose-invert max-w-none">
 		<ContentDoc path="/about" />
 	</article>
 </template>

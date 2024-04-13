@@ -8,7 +8,8 @@
         <ul>
             <li v-for="post in posts" :key="post._path">
                 <NuxtLink :to="post._path" class="column hover:bg-gray-100 dark:hover:bg-gray-800">
-                    <div class="text-gray-500">2023</div>
+                    <div :class="{ 'text-white dark:text-gray-900': !post.displayYear, 'text-gray-400 dark:text-gray-500': post.displayYear }">
+                    {{ post.year }}</div>
                     <div>{{ post.title }}</div>
                 </NuxtLink>
             </li>
@@ -25,12 +26,29 @@
 //findOne() :첫 번째로 일치하는 콘텐츠
 
 // queryContent : 페이지와 구성요소에서 쿼리를 컴포저블로 래핑 하여 첫 번째 로드 시 중복 가져오기
-const { data: posts } = await useAsyncData('blog-list',() => queryContent('/blog')
+const { data } = await useAsyncData('blog-list',() => queryContent('/blog')
         .where({ _path: { $ne: '/blog' } })
         .only(['_path', 'title','publishedAt'])
-        .sort({ title: 1 })
+        .sort({ publishedAt: -1 })
         .find()
     )
+const posts = computed(() => {
+    if (!data.value) {
+        return []
+    }
+    const result = []
+    let lastYear = null
+    for (const post of data.value) {
+        const year = new Date(post.publishedAt).getFullYear()
+        const displayYear = year !== lastYear
+        post.displayYear = displayYear
+        post.year = year
+        result.push(post)
+        lastYear = year
+    }
+    return result
+})
+
 console.log(posts)
 </script>
 

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 40,
+            "activePatchIndex": 43,
             "patches": [
                 {
                     "date": 1711545248467,
@@ -168,6 +168,18 @@
                 {
                     "date": 1713015249729,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-\t<h1>소개페이지</h1>\r\n+\t<!-- <h1>소개페이지</h1> -->\r\n \t<article class=\"prose dark:prose-invert prose-h1:text-2xl\">\r\n \t\t<ContentDoc path=\"/about\" />\r\n \t</article>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1713026392459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n \t<!-- <h1>소개페이지</h1> -->\r\n-\t<article class=\"prose dark:prose-invert prose-h1:text-2xl\">\r\n+\t<article class=\"prose dark:prose-invert\">\r\n \t\t<ContentDoc path=\"/about\" />\r\n \t</article>\r\n </template>\r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1713026488040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+<template>\r\n+\t<!-- <h1>소개페이지</h1> -->\r\n+\t<article class=\"prose dark:prose-invert  max-w-none\">\r\n+\t\t<ContentDoc path=\"/about\" />\r\n+\t</article>\r\n+</template>\r\n+<script setup>\r\n+// useHead({\r\n+//   title: 'About'\r\n+// })\r\n+// This will work in both `<script setup>` and `<script>`\r\n+// definePageMeta({\r\n+//   layout: \"another\",\r\n+// });\r\n+// function enableCustomLayout() {\r\n+//   setPageLayout('another')\r\n+// }\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713026493898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n \t<!-- <h1>소개페이지</h1> -->\r\n-\t<article class=\"prose dark:prose-invert  max-w-none\">\r\n+\t<article class=\"prose dark:prose-invert max-w-none\">\r\n \t\t<ContentDoc path=\"/about\" />\r\n \t</article>\r\n </template>\r\n <script setup>\r\n@@ -14,23 +14,5 @@\n // });\r\n // function enableCustomLayout() {\r\n //   setPageLayout('another')\r\n // }\r\n-</script>\n-<template>\r\n-\t<!-- <h1>소개페이지</h1> -->\r\n-\t<article class=\"prose dark:prose-invert\">\r\n-\t\t<ContentDoc path=\"/about\" />\r\n-\t</article>\r\n-</template>\r\n-<script setup>\r\n-// useHead({\r\n-//   title: 'About'\r\n-// })\r\n-// This will work in both `<script setup>` and `<script>`\r\n-// definePageMeta({\r\n-//   layout: \"another\",\r\n-// });\r\n-// function enableCustomLayout() {\r\n-//   setPageLayout('another')\r\n-// }\r\n </script>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1711545248467,
