@@ -15,6 +15,13 @@ export default defineNuxtConfig({
       },
     },
   },
+  ssr: false,
+  router: {
+    options: {
+      hashMode: true,
+      scrollBehaviorType : 'smooth',
+    }
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
@@ -39,5 +46,6 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'system', 
     classSuffix: ''
-  }
+  },
+ 
 })
